@@ -1,33 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Estudo\\APIRest\\FilmesAPI\\FilmesAPI\\FilmesAPI.csproj": {}
+    "C:\\jessica\\APIRESTful\\FilmesApi\\FilmesApi.csproj": {}
   },
   "projects": {
-    "D:\\Estudo\\APIRest\\FilmesAPI\\FilmesAPI\\FilmesAPI.csproj": {
+    "C:\\jessica\\APIRESTful\\FilmesApi\\FilmesApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Estudo\\APIRest\\FilmesAPI\\FilmesAPI\\FilmesAPI.csproj",
-        "projectName": "FilmesAPI",
-        "projectPath": "D:\\Estudo\\APIRest\\FilmesAPI\\FilmesAPI\\FilmesAPI.csproj",
-        "packagesPath": "C:\\Users\\jfdma\\.nuget\\packages\\",
-        "outputPath": "D:\\Estudo\\APIRest\\FilmesAPI\\FilmesAPI\\obj\\",
+        "projectUniqueName": "C:\\jessica\\APIRESTful\\FilmesApi\\FilmesApi.csproj",
+        "projectName": "FilmesApi",
+        "projectPath": "C:\\jessica\\APIRESTful\\FilmesApi\\FilmesApi.csproj",
+        "packagesPath": "C:\\Users\\jessicam\\.nuget\\packages\\",
+        "outputPath": "C:\\jessica\\APIRESTful\\FilmesApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jfdma\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\jessicam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\me\\Sandboxes\\nuget-local": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.miisy.me/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -45,9 +44,23 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Swashbuckle.AspNetCore": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.6.3, )"
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.16, )"
             }
           },
           "imports": [
@@ -56,7 +69,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -68,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

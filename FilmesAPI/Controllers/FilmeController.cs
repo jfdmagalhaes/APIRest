@@ -1,35 +1,78 @@
-﻿using FilmesAPI.Models;
+﻿using FilmesApi.Data;
+using FilmesAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
-namespace FilmesAPI.Controllers
+namespace FilmesApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class FilmeController : ControllerBase
     {
-        private static List<Filme> filmes = new List<Filme>();
-        private static int id = 1;
-        
-        [HttpPost]
-        public void AdicionaFilme([FromBody] Filme filme)
+        private FilmeContext _context;
+
+        public FilmeController(FilmeContext context)
         {
-            filme.Id = id++;
-            filmes.Add(filme);
+            _context = context;
+        }
+
+        [HttpPost]
+        public IActionResult AdicionaFilme([FromBody] Filme filme)
+        {
+            _context.Filmes.Add(filme);
+            _context.SaveChanges();
+            return CreatedAtAction(nameof(RecuperaFilmesPorId), new { Id = filme.Id }, filme);
         }
 
         [HttpGet]
-        public IEnumerable<Filme> RecuperarFilmes()
+        public IEnumerable<Filme> RecuperaFilmes()
         {
-            return filmes;
+            return _context.Filmes;
         }
 
         [HttpGet("{id}")]
-        public Filme RecuperaFilmesPorId(int id)
+        public IActionResult RecuperaFilmesPorId(int id)
         {
-           return filmes.FirstOrDefault(filme => filme.Id == id);
+            Filme filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+            if(filme != null)
+            {
+
+                return Ok(filme);
+            }
+            return NotFound();
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult AtualizaFilme(int id, [FromBody] Filme filmeNovo)
+        {
+            Filme filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+            if(filme == null)
+            {
+                return NotFound();
+            }
+            filme.Titulo = filmeNovo.Titulo;
+            filme.Genero = filmeNovo.Genero;
+            filme.Duracao = filmeNovo.Duracao;
+            filme.Diretor = filmeNovo.Diretor;
+            _context.SaveChanges();
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeletaFilme(int id)
+        {
+            Filme filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+            if (filme == null)
+            {
+                return NotFound();
+            }
+            _context.Remove(filme);
+            _context.SaveChanges();
+            return NoContent();
         }
     }
 }
