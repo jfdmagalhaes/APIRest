@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\jessica\\APIRESTful\\FilmesApi\\FilmesApi.csproj": {}
+    "C:\\jessica\\APIRESTful\\FilmesApi\\FilmesAPI.csproj": {}
   },
   "projects": {
-    "C:\\jessica\\APIRESTful\\FilmesApi\\FilmesApi.csproj": {
+    "C:\\jessica\\APIRESTful\\FilmesApi\\FilmesAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\jessica\\APIRESTful\\FilmesApi\\FilmesApi.csproj",
-        "projectName": "FilmesApi",
-        "projectPath": "C:\\jessica\\APIRESTful\\FilmesApi\\FilmesApi.csproj",
+        "projectUniqueName": "C:\\jessica\\APIRESTful\\FilmesApi\\FilmesAPI.csproj",
+        "projectName": "FilmesAPI",
+        "projectPath": "C:\\jessica\\APIRESTful\\FilmesApi\\FilmesAPI.csproj",
         "packagesPath": "C:\\Users\\jessicam\\.nuget\\packages\\",
         "outputPath": "C:\\jessica\\APIRESTful\\FilmesApi\\obj\\",
         "projectStyle": "PackageReference",
@@ -44,6 +44,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.17, )"
@@ -61,6 +65,14 @@
             "MySql.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.16, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[6.4.0, )"
             }
           },
           "imports": [

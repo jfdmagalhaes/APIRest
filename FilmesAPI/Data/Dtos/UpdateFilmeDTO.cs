@@ -2,7 +2,7 @@
 
 namespace FilmesApi.Data.Dtos
 {
-    public class UptadateFilmeDTO
+    public class UpdateFilmeDTO
     {
         [Required(ErrorMessage = "O campo de título é obrigatório")]
         public string Titulo { get; set; }
